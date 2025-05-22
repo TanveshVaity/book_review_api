@@ -33,6 +33,7 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/books", bookRoute);
 app.use("/api/v1/books/:id/reviews", reviewRoute);
 
+// database connection
 const PORT = process.env.PORT || 5000;
 connectDB()
 .then(() => {

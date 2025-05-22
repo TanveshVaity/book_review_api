@@ -6,6 +6,7 @@ const addBook = async (req, res) => {
     try {
         const { title,description, author, genre, publishedYear} = req.body;
 
+        // savig data in book collection
         const newBook = new Book({
             title,
             description,
@@ -38,6 +39,7 @@ const getBooks = async(req, res) =>{
             sort : { createdAt : -1 },
         }
 
+        // paggination
         const books = await Book.aggregatePaginate(
             Book.aggregate([
                { $match: filter },

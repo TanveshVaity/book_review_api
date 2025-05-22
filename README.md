@@ -63,6 +63,32 @@ Development mode with nodemon:
     }
 ```
 
+#### Login user
+- endpoint : `http://localhost:5000/api/v1/users/login`
+- body :
+```json
+    {
+        "email": "tan1@example.com",
+        "password": "tan1"
+    }
+```
+- response :
+```json
+    {
+        "existingUser": {
+            "_id": "682e4d3844d00fcac82f0144",
+            "username": "tan1",
+            "email": "tan1@example.com",
+            "password": "$2b$10$glIjxZWeIjmGOHub8hgjouBvHYsHEvIjJJCAYlY..pu3SvAdYFVSK",
+            "createdAt": "2025-05-21T22:01:28.291Z",
+            "updatedAt": "2025-05-21T22:01:28.291Z",
+            "__v": 0
+        },
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODJlNGQzODQ0ZDAwZmNhYzgyZjAxNDQiLCJ1c2VybmFtZSI6InRhbjEiLCJlbWFpbCI6InRhbjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDc5MDUzNDAsImV4cCI6MTc0Nzk5MTc0MH0.b3BZGSxWKfK_kseOoSKhLU0HSnrx_4MUBfL2QjDjsAQ",
+        "message": "User logged in successfully"
+    }
+```
+
 #### Add new book
 - endpoint : `POST http://localhost:5000/api/v1/books/add`
 - header : `authorization : <access token>`
